@@ -1,0 +1,74 @@
+
+<div class="col-12">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center left-login pt-5 col-sm-12">
+      <div>
+        <div>
+          <h1>Biblioteca Online</h1>
+        </div>
+
+        <div class="pt-5">
+          <img class="pt-5" src="./../../../assets/imagem-login.svg">
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6 right-login pt-5 d-flex justify-content-center col-sm-12">
+      <div class="container col-11">
+        <h1>
+          Faça o login para ler ou enviar seu livro
+        </h1>
+        <form class="login-form d-flex justify-content-center" [formGroup]="loginForm" (ngSubmit)="confirm()">
+          <div class="col-md-10 col-sm-12">
+            <div class="floating-label mt-4">
+              <input type="text" id="email" placeholder=" " formControlName="email" required>
+              <label for="email">Email</label>
+              @if (this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched) {
+                <div class="erro">
+                  @if (this.loginForm.get('email')?.errors?.['required']) {
+                    <span>O e-mail é obrigatório.</span>
+                  }
+                  @if (this.loginForm.get('email')?.errors?.['pattern']) {
+                    <span>O e-mail não é válido.</span>
+                  }
+                </div>
+              }
+
+            </div>
+            <div class="floating-label mt-4">
+              <input type="password" id="password" placeholder=" " formControlName="password" required>
+              <label for="password">Senha</label>
+              @if (this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched) {
+                <div class="erro">
+                  @if (this.loginForm.get('password')?.errors?.['required']) {
+                    <span>A senha é obrigatória.</span>
+                  }
+                  @if (this.loginForm.get('password')?.errors?.['minlength']) {
+                    <span>A senha deve ter no mínimo 8 digitos.</span>
+                  }
+                </div>
+
+              }
+            </div>
+            <div class="d-flex justify-content-center mt-5 pt-5">
+              <div class="col-6">
+                <button type="submit" class="btn btn-main" [disabled]="this.loginForm.invalid">
+                  @if (isLoading()) {
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  }
+                  Entrar</button>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+              <div><a href="">Esqueceu a senha?</a></div>
+              <div><a [routerLink]="['/create-account']">Não tenho uma conta</a></div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+

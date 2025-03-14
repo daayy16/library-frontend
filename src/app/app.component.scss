@@ -1,0 +1,14 @@
+.pages {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 999;
+  top: 0;
+}
+
+.side {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "../node_modules/bootstrap/scss/functions";
+
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+$primary: #9C90C8;
+
+
+
+
+* {
+  font-family: "Roboto", sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  font-weight: lighter;
+  color: #8370C8;
+  font-size: 20px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.floating-label {
+  position: relative;
+  width: 100%;
+}
+
+.floating-label input {
+  width: 100%;
+  padding: 9px 0;
+  border: none;
+  border-bottom: 1.2px solid #414141;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.floating-label label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  color: #414141;
+  pointer-events: none;
+}
+
+.floating-label input:focus+label,
+.floating-label input:not(:placeholder-shown)+label {
+  top: -10px;
+  font-size: 12px;
+  color: #000;
+}
+
+.btn-main {
+  background-color: $primary;
+  width: 100%;
+  border: $primary;
+  color: #fff;
+  border-radius: 24px;
+  padding: 14px;
+  font-size: 20px;
+
+  &:hover {
+    background-color: #8370C8;
+    color: #fff;
+  }
+
+  &:disabled {
+    background-color: #c9bfec;
+    color: #fff;
+  }
+}
+
+.btn:active,
+.btn.active {
+  background-color: #8370C8 !important;
+  color: #fff !important;
+}
+
+h1 {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 3.3rem;
+}
+
+
+.left-login {
+  background-color: $primary;
+  border-top-right-radius: 56px;
+  border-bottom-right-radius: 56px;
+
+
+  h1 {
+    color: #fff;
+  }
+
+  img {
+    max-width: 512px;
+  }
+}
+
+.right-login {
+  h1 {
+    color: $primary;
+  }
+
+  .login-form {
+    width: 100%;
+    margin-top: 111px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.erro {
+  color: red;
+  font-size: 14px;
+}
+
+.modal-custom {
+  .modal-footer {
+    justify-content: center;
+  }
+}
+
+.fa-circle-exclamation, .fa-exclamation-circle {
+  color: #ae1111;
+}
+
+.fa-check-circle, .fa-circle-check {
+  color: rgb(5, 67, 5);
+}

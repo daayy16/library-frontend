@@ -1,0 +1,96 @@
+<div class="col-12">
+  <div class="row">
+    <div class="col-6 d-flex justify-content-center left-login pt-5">
+      <div>
+        <div>
+          <h1>Biblioteca Online</h1>
+        </div>
+
+        <div class="pt-5">
+          <img class="pt-5" src="./../../../assets/create-account.svg">
+        </div>
+      </div>
+
+    </div>
+    <div class="col-6 right-login pt-5 d-flex justify-content-center">
+      <div class="container col-11">
+        <h1>
+          Preencha os dados e crie uma conta
+        </h1>
+        <form class="login-form d-flex justify-content-center" [formGroup]="accountForm" (ngSubmit)="confirm()">
+          <div class="col-10">
+            <div class="floating-label">
+              <input type="text" id="fullname" placeholder=" " formControlName="fullname" required>
+              <label for="fullname">Nome </label>
+              @if (this.accountForm.get('fullname')?.invalid && this.accountForm.get('fullname')?.touched) {
+                <div class="erro">
+                    <span>Digite seu nome</span>
+                </div>
+              }
+            </div>
+            <div class="floating-label mt-4">
+              <input type="text" id="email" placeholder=" " formControlName="email" required>
+              <label for="email">Email</label>
+              @if (this.accountForm.get('email')?.invalid && this.accountForm.get('email')?.touched) {
+                <div class="erro">
+                  @if (this.accountForm.get('email')?.errors?.['required']) {
+                    <span>O e-mail é obrigatório.</span>
+                  }
+                  @if (this.accountForm.get('email')?.errors?.['pattern']) {
+                    <span>O e-mail não é válido.</span>
+                  }
+                </div>
+              }
+            </div>
+            <div class="floating-label mt-4">
+              <input type="password" id="password" placeholder=" " formControlName="password" required>
+              <label for="password">Senha</label>
+              @if (this.accountForm.get('password')?.invalid && this.accountForm.get('password')?.touched) {
+                <div class="erro">
+                  @if (this.accountForm.get('password')?.errors?.['required']) {
+                    <span>A senha é obrigatória.</span>
+                  }
+                  @if (this.accountForm.get('password')?.errors?.['minlength']) {
+                    <span>A senha deve ter no mínimo 8 digitos.</span>
+                  }
+                </div>
+
+              }
+            </div>
+            <div class="floating-label mt-4">
+              <input type="password" id="repeatPassword" placeholder=" " formControlName="repeatPassword" required>
+              <label for="repeatPassword">Repita a senha</label>
+              @if (this.accountForm.get('repeatPassword')?.invalid && this.accountForm.get('repeatPassword')?.touched) {
+                <div class="erro">
+                  @if (this.accountForm.get('repeatPassword')?.errors?.['required']) {
+                    <span>Confirmar a senha é obrigatório</span>
+                  }
+                </div>
+
+              }
+              @if (this.accountForm.get('repeatPassword')?.touched && this.accountForm.errors?.['notMatched']) {
+                <div class="erro">
+                  <span>As senhas devem ser iguais</span>
+                </div>
+
+              }
+            </div>
+            <div class="d-flex justify-content-center mt-5 pt-5">
+              <div class="col-6">
+                <button type="submit" class="btn btn-main" [disabled]="accountForm.invalid">
+                  @if (isLoading()) {
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  }Enviar</button>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div><a href="">Ja tem uma conta? Faça o login</a></div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
