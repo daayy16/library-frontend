@@ -1,5 +1,4 @@
 
-
 .fa-2x {
   font-size: 2em;
 }
@@ -22,7 +21,7 @@ nav.main-menu.expanded {
 }
 
 .main-menu {
-  background: $primary;
+  background: #9C90C8;
   border-right: 1px solid #e5e5e5;
   position: absolute;
   top: 0;
@@ -124,7 +123,7 @@ nav.main-menu li.active>a,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
   color: #fff;
-  background-color: #000000;
+  background-color: #8370C8;
 }
 
 .area {
