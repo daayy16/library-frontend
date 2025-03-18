@@ -1,0 +1,39 @@
+<nav class="sidebar" [class.close]="isClosed">
+  <header>
+    <div class="logo">
+      <span class="image">
+        <img src="./../../../assets/book_2.png" alt="">
+      </span>
+      <div class="text header-text">
+        <span class="name">Biblioteca Online</span>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-right toggle" (click)="closeSidebar()"></i>
+  </header>
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        <li class="nav-links">
+          <a href="">
+            <i class="fa-solid fa-house icon"></i>
+            <span class="text nav-text">Livros</span>
+          </a>
+        </li>
+        <li class="nav-links">
+          <a href="">
+            <i class="fa-solid fa-book icon"></i>
+            <span class="text nav-text">Meus Livros</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="bottom-content">
+      <li class="">
+        <a href="">
+          <i class="fa-solid fa-right-from-bracket icon"></i>
+          <span class="text nav-text">Sair</span>
+        </a>
+      </li>
+    </div>
+  </div>
+</nav>

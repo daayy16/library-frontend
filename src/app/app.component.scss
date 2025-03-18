@@ -3,12 +3,21 @@
   right: 0;
   bottom: 0;
   overflow-y: auto;
-  z-index: 999;
+  z-index: 99;
   top: 0;
+  left: 250px;
+  width: calc(100% - 250px);
+  transition: all 0.5s ease;
 }
 
 .side {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+}
+
+.close {
+  left: 86px;
+  width: calc(100% - 86px);
 }

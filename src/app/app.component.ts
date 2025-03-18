@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StorageService } from './services/storage.service';
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent],
+  imports: [RouterOutlet, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'library-frontend';
+  isClosed = true;
   constructor(private storageService: StorageService){}
 
   isLogged():boolean {
@@ -20,5 +21,9 @@ export class AppComponent {
    } else {
     return false
    }
+  }
+
+  getIsClosed(value: boolean) {
+    this.isClosed = value;
   }
 }
