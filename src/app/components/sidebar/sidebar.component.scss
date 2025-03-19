@@ -46,7 +46,6 @@ $tran_05: all 0.5s ease;
         font-weight: bolder;
         transition: $tran_04;
         white-space: nowrap;
-        opacity: 1;
       }
 
       .header-text {
@@ -133,6 +132,12 @@ $tran_05: all 0.5s ease;
   .text {
     opacity: 0;
   }
+
+.logo {
+  .header-text {
+    opacity: 0;
+  }
+}
 
   header {
     .toggle {

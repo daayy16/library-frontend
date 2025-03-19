@@ -1,7 +1,7 @@
 <div class="side" [hidden]="!isLogged()">
   <app-sidebar (closeBarEvent)="getIsClosed($event)"></app-sidebar>
 </div>
-<div class="pages" [class.close]="isClosed">
+<div class="pages" [class.close]="isClosed && isLogged()" [class.not-logged]="!isLogged()">
   <router-outlet />
 </div>
 
