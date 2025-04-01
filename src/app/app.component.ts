@@ -22,8 +22,4 @@ export class AppComponent {
     return false
    }
   }
-
-  getIsClosed(value: boolean) {
-    this.isClosed = value;
-  }
 }

@@ -1,0 +1,28 @@
+<div class="page-container">
+  <div class="col-md-6 box-page">
+    <form class="form-upload">
+      <div class="upload-area col-md-11">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <input type="file" accept="application/pdf" formControlName="fileBook" required>
+      </div>
+      <div class="floating-label mt-4">
+        <input type="text" id="nameBook" placeholder=" " formControlName="nameBook" required>
+        <label for="nameBook">Título</label>
+      </div>
+      <div class="floating-label mt-4">
+        <input type="text" id="author" placeholder=" " formControlName="author" required>
+        <label for="author">Autor</label>
+      </div>
+        <div class="d-flex pt-5 col-md-4">
+            <button type="submit" class="btn btn-main">
+              @if (isLoading()) {
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              }
+              Enviar</button>
+        </div>
+    </form>
+  </div>
+  <div class="col-md-5 box-page">
+
+  </div>
+</div>
