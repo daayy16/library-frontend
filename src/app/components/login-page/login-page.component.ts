@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { AccountService } from '../../services/account.service';
 import { LoadingService } from '../../services/loading.service';
@@ -13,7 +13,7 @@ import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule, RouterLink, ModalComponent],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule, RouterLink, ModalComponent],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
   providers: [BsModalService],

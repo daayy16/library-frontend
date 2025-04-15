@@ -1,7 +1,7 @@
 <div [hidden]="!isLogged()">
   <app-sidebar></app-sidebar>
 </div>
-<div class="pages">
+<div [class.page-logged]="isLogged()" class="pages">
   <router-outlet />
 </div>
 
