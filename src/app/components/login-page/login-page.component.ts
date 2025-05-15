@@ -8,12 +8,13 @@ import { ModalComponent } from '../modal/modal.component';
 import { BsModalRef, BsModalService, ModalBackdropOptions, ModalOptions } from "ngx-bootstrap/modal";
 import { getEmailPattern } from '../../utils/validations.utils';
 import { StorageService } from '../../services/storage.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, RouterModule, RouterLink, ModalComponent],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule, RouterLink, ModalComponent, CommonModule],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
   providers: [BsModalService],
@@ -32,6 +33,7 @@ export class LoginPageComponent {
   mostrarErro = false;
   mensagemErro = '';
   modalRef?: BsModalRef;
+  showPassword = false
 
 
   loginForm = new FormGroup({
@@ -81,6 +83,10 @@ export class LoginPageComponent {
     this.storageService.setSessionStorage('token', token);
     this.router.navigate(['books'])
 
+  }
+
+  ShowPassIcon() {
+    this.showPassword = !this.showPassword;
   }
 
 }

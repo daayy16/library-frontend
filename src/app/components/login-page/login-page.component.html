@@ -36,7 +36,7 @@
 
             </div>
             <div class="floating-label mt-4">
-              <input type="password" id="password" placeholder=" " formControlName="password" [readonly]="isLoading()" required>
+              <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder=" " formControlName="password" [readonly]="isLoading()" required>
               <label for="password">Senha</label>
               @if (this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched) {
                 <div class="erro">
@@ -49,6 +49,11 @@
                 </div>
 
               }
+              <div class="icon-input" *ngIf="this.loginForm.get('password')?.value" (click)="this.ShowPassIcon()">
+                <i class="fa-regular fa-eye" *ngIf="this.showPassword"></i>
+                <i class="fa-regular fa-eye-slash" *ngIf="!this.showPassword"></i>
+              </div>
+
             </div>
             <div class="d-flex justify-content-center mt-5 pt-5">
               <div class="col-6">

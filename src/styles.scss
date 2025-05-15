@@ -52,6 +52,7 @@ a {
   outline: none;
   font-size: 16px;
   background: transparent;
+  padding-right: 24px;
 }
 
 .floating-label label {
@@ -69,6 +70,13 @@ a {
   top: -10px;
   font-size: 12px;
   color: #000;
+}
+
+.icon-input {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  cursor: pointer;
 }
 
 .btn-main {
@@ -150,10 +158,12 @@ h1 {
   }
 }
 
-.fa-circle-exclamation, .fa-exclamation-circle {
+.fa-circle-exclamation,
+.fa-exclamation-circle {
   color: #ae1111;
 }
 
-.fa-check-circle, .fa-circle-check {
+.fa-check-circle,
+.fa-circle-check {
   color: rgb(5, 67, 5);
 }
