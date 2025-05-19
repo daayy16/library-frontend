@@ -22,4 +22,11 @@ export class AccountService {
       dto
     );
   }
+
+  forgotPassword(email: any): Observable<any> {
+    return this.http.post(
+      `http://localhost:3000/auth/forgot-password`,
+      { email }
+    );
+  }
 }
