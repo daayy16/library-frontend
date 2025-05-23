@@ -6,16 +6,18 @@ import { LoadingService } from '../../services/loading.service';
 import { getEmailPattern, passwordValidation } from '../../utils/validations.utils';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ModalComponent } from '../modal/modal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, ModalComponent],
+  imports: [FormsModule, ReactiveFormsModule, ModalComponent, CommonModule],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.scss',
   providers: [BsModalService],
 })
 export class CreateAccountComponent {
+
   constructor(private accountService: AccountService,
     private router: Router,
     private loadingService: LoadingService,
@@ -24,6 +26,8 @@ export class CreateAccountComponent {
   ) { }
 
   modalRef?: BsModalRef;
+  showPassword = false;
+  showRepeatPassword = false;
 
   accountForm = new FormGroup({
     fullname: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -84,10 +88,18 @@ export class CreateAccountComponent {
     });
 
     this.modalRef?.onHidden?.subscribe(() => {
-      if(!this.modalRef?.content?.error) {
+      if (!this.modalRef?.content?.error) {
         this.router.navigate(['login'])
       }
     })
 
+  }
+
+  ShowPassIcon() {
+    this.showPassword = !this.showPassword;
+  }
+
+  ShowRepeatPassIcon() {
+    this.showRepeatPassword = !this.showRepeatPassword;
   }
 }
